@@ -8,12 +8,14 @@ const Header = () => {
     <header className="header" style={{ background: colors.surface, borderColor: colors.border }}>
       <div className="header-content">
         <div className="logo">
-          <h1 style={{ color: colors.text }}>
-            <span style={{ color: colors.primary }}>Sabai</span>Health
-          </h1>
-          <p className="tagline" style={{ color: colors.textSecondary }}>Care That Never Forgets</p>
+          <img src="/images/SabaiLogo.png" alt="SabaiHealth Logo" className="logo-image" />
+          <div className="logo-text">
+            <h1 style={{ color: colors.text }}>SabaiHealth</h1>
+          </div>
         </div>
-        <ThemeToggle />
+        <div className="header-right">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
