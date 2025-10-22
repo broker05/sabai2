@@ -1,36 +1,32 @@
-import { useTheme } from '../../contexts/ThemeContext';
 import Section from '../Section';
-import GlassCard from '../GlassCard';
 
 const TimingSection = () => {
-  const { colors } = useTheme();
-
   return (
     <Section
       title="TIMING"
       subtitle="Perfect Convergence: AI Revolution Meets Healthcare Crisis"
       id="timing"
     >
-      <div className="timing-grid">
-        <GlassCard>
-          <h3 style={{ color: colors.primary }}>AI Cost Revolution</h3>
-          <p style={{ color: colors.text }}>99.7% cost drop since 2022 = near-zero marginal delivery cost</p>
-        </GlassCard>
+      <div className="timing-cards">
+        <div className="timing-card timing-card-blue">
+          <h3>AI Cost Revolution</h3>
+          <p>99.7% cost drop since 2022 = near-zero marginal delivery cost</p>
+        </div>
 
-        <GlassCard>
-          <h3 style={{ color: colors.secondary }}>Massive User Base</h3>
-          <p style={{ color: colors.text }}>4B+ messaging users, 65% prefer messaging for services</p>
-        </GlassCard>
+        <div className="timing-card timing-card-green">
+          <h3>Massive User Base</h3>
+          <p>4B+ messaging users, 65% prefer messaging for services</p>
+        </div>
 
-        <GlassCard>
-          <h3 style={{ color: colors.accent }}>Post-COVID Health Awareness</h3>
-          <p style={{ color: colors.text }}>Digital health growing 21.2% CAGR</p>
-        </GlassCard>
+        <div className="timing-card timing-card-cyan">
+          <h3>Post-COVID Health Awareness</h3>
+          <p>Digital health growing 21.2% CAGR</p>
+        </div>
 
-        <GlassCard>
-          <h3 style={{ color: colors.primary }}>Regulatory Maturation</h3>
-          <p style={{ color: colors.text }}>Thailand leading AI-friendly healthcare frameworks</p>
-        </GlassCard>
+        <div className="timing-card timing-card-blue-light">
+          <h3>Regulatory Maturation</h3>
+          <p>Thailand leading AI-friendly healthcare frameworks</p>
+        </div>
       </div>
     </Section>
   );
