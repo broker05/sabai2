@@ -107,12 +107,17 @@ body {
 }
 
 .glass-card {
+  background: linear-gradient(135deg, rgba(224, 247, 250, 0.6) 0%, rgba(232, 245, 233, 0.6) 100%);
   backdrop-filter: blur(20px);
   border: 1px solid;
   border-radius: 1rem;
   padding: 1.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   animation: fadeInUp 0.5s ease;
+}
+
+.dark .glass-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 36, 25, 0.6) 100%);
 }
 
 @keyframes fadeInUp {
@@ -1064,6 +1069,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  margin-bottom: 4rem;
 }
 
 .revolution-grid h3 {
@@ -1086,6 +1092,294 @@ body {
 .revolution-grid li {
   margin-bottom: 0.5rem;
   line-height: 1.5;
+}
+
+/* BRAIN Section */
+.brain-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.brain-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #2d5016;
+  margin: 0 0 0.5rem 0;
+}
+
+.dark .brain-title {
+  color: #8BC34A;
+}
+
+.brain-subtitle {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #5a7a3c;
+  margin: 0 0 3rem 0;
+}
+
+.dark .brain-subtitle {
+  color: #9ccc65;
+}
+
+.brain-pyramid-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.brain-layer {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.brain-layer:not(:last-child) {
+  border-bottom: 1px solid rgba(139, 195, 74, 0.2);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pyramid-segment {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(139, 195, 74, 0.08) 0%, rgba(139, 195, 74, 0.04) 100%);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+  transition: all 0.3s ease;
+}
+
+.pyramid-segment-1 {
+  width: 180px;
+  height: 140px;
+  margin: 0 auto;
+}
+
+.pyramid-segment-2 {
+  width: 240px;
+  height: 160px;
+  margin: 0 auto;
+}
+
+.pyramid-segment-3 {
+  width: 300px;
+  height: 180px;
+  margin: 0 auto;
+}
+
+.pyramid-number {
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgba(90, 122, 60, 0.3);
+  z-index: 1;
+}
+
+.dark .pyramid-number {
+  color: rgba(139, 195, 74, 0.3);
+}
+
+.layer-content {
+  text-align: left;
+}
+
+.layer-content h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2d5016;
+  margin: 0 0 0.5rem 0;
+}
+
+.dark .layer-content h3 {
+  color: #8BC34A;
+}
+
+.layer-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5a7a3c;
+  margin: 0 0 1rem 0;
+  font-style: italic;
+}
+
+.dark .layer-label {
+  color: #9ccc65;
+}
+
+.layer-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.layer-content li {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin-bottom: 0.65rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.dark .layer-content li {
+  color: #d1d5db;
+}
+
+.layer-content li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #8BC34A;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Flywheel Section */
+.flywheel-section {
+  margin-top: 4rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flywheel-diagram {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+}
+
+.flywheel-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(139, 195, 74, 0.1) 0%, rgba(139, 195, 74, 0.05) 100%);
+  border: 2px solid rgba(139, 195, 74, 0.3);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease backwards;
+}
+
+.flywheel-step:hover {
+  transform: scale(1.05);
+  border-color: rgba(139, 195, 74, 0.5);
+  box-shadow: 0 8px 24px rgba(139, 195, 74, 0.2);
+}
+
+.flywheel-step-1 {
+  animation-delay: 0.2s;
+}
+
+.flywheel-step-2 {
+  animation-delay: 0.3s;
+}
+
+.flywheel-step-3 {
+  animation-delay: 0.5s;
+}
+
+.flywheel-step-4 {
+  animation-delay: 0.4s;
+}
+
+.flywheel-step h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2d5016;
+  margin: 0;
+  text-align: center;
+}
+
+.dark .flywheel-step h4 {
+  color: #8BC34A;
+}
+
+.flywheel-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+}
+
+.infinity-loop {
+  width: 100%;
+  height: 100%;
+  color: rgba(139, 195, 74, 0.4);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.infinity-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 3s ease-in-out forwards, pulse 2s ease-in-out infinite 3s;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.flywheel-quote {
+  background: linear-gradient(135deg, rgba(139, 195, 74, 0.08) 0%, rgba(139, 195, 74, 0.04) 100%);
+  border-left: 4px solid #8BC34A;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  margin: 0;
+  text-align: center;
+}
+
+.flywheel-quote p {
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: #2d5016;
+  margin: 0 0 1rem 0;
+}
+
+.dark .flywheel-quote p {
+  color: #d1d5db;
+}
+
+.flywheel-quote cite {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5a7a3c;
+  font-style: normal;
+}
+
+.dark .flywheel-quote cite {
+  color: #8BC34A;
 }
 
 .revolution-grid ul {
@@ -1470,6 +1764,64 @@ body {
 
   .timing-card {
     padding: 1.5rem 1.25rem;
+  }
+
+  .brain-layer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pyramid-segment-1 {
+    width: 140px;
+    height: 110px;
+  }
+
+  .pyramid-segment-2 {
+    width: 180px;
+    height: 120px;
+  }
+
+  .pyramid-segment-3 {
+    width: 220px;
+    height: 140px;
+  }
+
+  .pyramid-number {
+    font-size: 3rem;
+  }
+
+  .layer-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .layer-content li {
+    font-size: 0.875rem;
+  }
+
+  .flywheel-diagram {
+    height: 350px;
+    gap: 1.5rem;
+  }
+
+  .flywheel-step {
+    padding: 1.5rem 1rem;
+  }
+
+  .flywheel-step h4 {
+    font-size: 1rem;
+  }
+
+  .flywheel-center {
+    width: 150px;
+    height: 150px;
+  }
+
+  .flywheel-quote {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .flywheel-quote p {
+    font-size: 1rem;
   }
 
   .container {

@@ -7,7 +7,6 @@ const GlassCard = ({ children, className = '', hover = true }) => {
     <div
       className={`glass-card ${hover ? 'glass-card-hover' : ''} ${className}`}
       style={{
-        background: colors.surface,
         borderColor: colors.border,
       }}
     >
