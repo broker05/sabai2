@@ -5,8 +5,8 @@ const Header = () => {
   const { colors } = useTheme();
 
   return (
-    <header className="header" style={{ background: colors.surface, borderColor: colors.border }}>
-      <div className="header-content">
+    <header className="header">
+      <div className="header-content" style={{ background: colors.surface, borderColor: colors.border }}>
         <div className="logo">
           <img src="/images/SabaiLogo.png" alt="SabaiHealth Logo" className="logo-image" />
           <div className="logo-text">

@@ -29,10 +29,9 @@ body {
 
 .header {
   position: sticky;
-  top: 0;
+  top: 1rem;
   z-index: 100;
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid;
+  padding: 0 1.5rem;
   transition: all var(--transition-speed) ease;
   animation: slideDown 0.5s ease;
 }
@@ -42,6 +41,7 @@ body {
     transform: translateY(-100%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -51,10 +51,14 @@ body {
 .header-content {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: blur(20px);
+  border-radius: 50px;
+  border: 1px solid;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -64,13 +68,13 @@ body {
 }
 
 .logo-image {
-  height: 50px;
+  height: 40px;
   width: auto;
   object-fit: contain;
 }
 
 .logo-text h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
 }
@@ -102,7 +106,7 @@ body {
   backdrop-filter: blur(20px);
   border: 1px solid;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1.5rem;
   transition: all var(--transition-speed) ease;
   animation: fadeInUp 0.6s ease;
 }
@@ -112,6 +116,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -134,35 +139,40 @@ body {
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 2rem 0;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   line-height: 1.2;
 }
 
 .section-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-style: italic;
   max-width: 800px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .hero-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 2rem 0 !important;
   background: linear-gradient(135deg, rgba(240, 248, 255, 0.1) 0%, rgba(224, 247, 250, 0.1) 100%);
+}
+
+.hero-section .container {
+  padding: 0;
+  max-width: 100%;
 }
 
 .dark .hero-section {
@@ -176,26 +186,22 @@ body {
   width: 100%;
 }
 
-.hero-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
 .hero-badge {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 50px;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   animation: fadeInUp 0.6s ease;
+  align-self: flex-start;
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 2.75rem;
   font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  line-height: 1.15;
+  margin-bottom: 0;
   animation: fadeInUp 0.8s ease 0.2s backwards;
 }
 
@@ -207,33 +213,32 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 500;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.5;
   animation: fadeInUp 0.8s ease 0.4s backwards;
 }
 
 .hero-meta {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
   animation: fadeInUp 0.8s ease 0.6s backwards;
+  margin-bottom: 0;
 }
 
 .meta-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 1rem 1.5rem;
+  align-items: flex-start;
+  padding: 0.5rem 0.75rem;
   border: 1px solid;
-  border-radius: 12px;
+  border-radius: 8px;
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.1);
-  min-width: 140px;
+  min-width: 110px;
 }
 
 .dark .meta-item {
@@ -241,31 +246,37 @@ body {
 }
 
 .meta-label {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .meta-item span:last-child {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 2rem;
+  grid-template-columns: 45% 55%;
+  gap: 3rem;
   align-items: start;
-  margin-top: 2rem;
+  width: 100%;
 }
 
 .left-container {
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.left-container>div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .right-container {
@@ -275,44 +286,76 @@ body {
   gap: 2rem;
 }
 
-.mission-vision-stats {
-  display: flex;
-  flex-direction: column;
+.mission-vision-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
 
-.hero-header {
-  text-align: left;
-  width: 100%;
+.mission-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.mission-item p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.key-stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-item p {
+  font-size: 0.8rem;
+  line-height: 1.4;
 }
 
 .goals-section {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .goals-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .goals-grid {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-top: 0;
-  min-height: 400px;
 }
 
 .goal-card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  border-radius: 1rem 1rem 0 0;
-  padding: 2rem 1.5rem 2rem 1.5rem;
+  border-radius: 10rem 10rem 0 0;
+  padding: 2rem 1.25rem;
   position: relative;
   min-width: 140px;
   transition: transform 0.3s ease;
@@ -324,39 +367,44 @@ body {
 
 .goal-card-1 {
   background: linear-gradient(135deg, #2d5016, #4a7c59);
-  height: 250px;
+  height: 200px;
 }
 
 .goal-card-2 {
   background: linear-gradient(135deg, #4a7c59, #6ba368);
-  height: 300px;
+  height: 240px;
 }
 
 .goal-card-3 {
   background: linear-gradient(135deg, #6ba368, #8bc34a);
-  height: 350px;
+  height: 280px;
 }
 
 .goal-icon {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   position: relative;
   z-index: 2;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.goal-icon svg {
+  width: 26px;
+  height: 26px;
 }
 
 .goal-card h3 {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 700;
   color: white;
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 .danger-opportunity-content {
@@ -376,23 +424,6 @@ body {
   margin-bottom: 2rem;
 }
 
-.key-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-}
-
 .mission-vision {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -400,80 +431,164 @@ body {
   margin-bottom: 3rem;
 }
 
-.mission-item h3 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+/* Solution Section Styles */
+.solution-main-card {
+  background: linear-gradient(135deg, #f5f5f0 0%, #e8f5e9 100%);
+  border-radius: 1.5rem;
+  padding: 2rem 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-.mission-item p {
-  font-size: 1.125rem;
-  line-height: 1.5;
+.solution-main-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(139, 195, 74, 0.1));
+  pointer-events: none;
 }
 
-.goals-grid {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+.solution-logo {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.solution-logo img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.solution-logo p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2d5016;
+  margin: 0;
+}
+
+.solution-qr-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  margin-top: 0;
-  min-height: 400px;
+  max-width: 900px;
+  margin: 0 auto 2rem;
 }
 
-.goal-card {
+.qr-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  border-radius: 1rem 1rem 0 0;
-  padding: 2rem 1.5rem 2rem 1.5rem;
-  position: relative;
-  min-width: 140px;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
-.goal-card:hover {
+.qr-card:hover {
   transform: translateY(-5px);
 }
 
-.goal-card-1 {
-  background: linear-gradient(135deg, #2d5016, #4a7c59);
-  height: 250px;
+.whatsapp-card {
+  border-top: 4px solid #25D366;
 }
 
-.goal-card-2 {
-  background: linear-gradient(135deg, #4a7c59, #6ba368);
-  height: 300px;
+.line-card {
+  border-top: 4px solid #00B900;
 }
 
-.goal-card-3 {
-  background: linear-gradient(135deg, #6ba368, #8bc34a);
-  height: 350px;
+.telegram-card {
+  border-top: 4px solid #0088cc;
 }
 
-.goal-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+.qr-label {
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px 8px 0 0;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: white;
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.whatsapp-card .qr-label {
+  background: #25D366;
+}
+
+.line-card .qr-label {
+  background: #00B900;
+}
+
+.telegram-card .qr-label {
+  background: #0088cc;
+}
+
+.qr-code {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  border: 3px solid #e0e0e0;
+  padding: 0.5rem;
   background: white;
+  border-radius: 8px;
+}
+
+.solution-points-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.solution-point {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 1.25rem;
+  border-radius: 1rem;
+  border-left: 4px solid #8BC34A;
+}
+
+.solution-point-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 1rem;
+  margin-bottom: 0.75rem;
 }
 
-.goal-card h3 {
-  font-size: 1.125rem;
+.solution-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #5a7a3c;
+  min-width: 40px;
+}
+
+.solution-point h3 {
+  font-size: 1.15rem;
   font-weight: 700;
-  color: white;
+  color: #2d5016;
   margin: 0;
-  line-height: 1.3;
 }
 
-.solution-grid,
+.solution-point p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin: 0;
+  padding-left: 3.5rem;
+}
+
+.highlight-text {
+  color: #8BC34A;
+  font-weight: 700;
+}
+
+/* Other grids */
 .revolution-grid,
 .timing-grid {
   display: grid;
@@ -481,24 +596,16 @@ body {
   gap: 2rem;
 }
 
-.solution-number {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-}
-
-.solution-grid h3,
 .revolution-grid h3,
 .timing-grid h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
-.solution-grid p,
 .revolution-grid p,
 .timing-grid p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.5;
 }
 
@@ -528,8 +635,8 @@ body {
 .legacy-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .stat-card {
@@ -537,31 +644,31 @@ body {
 }
 
 .stat-number {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   line-height: 1;
 }
 
 .stat-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .robin-hood-promise {
-  margin-top: 3rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
 .robin-hood-promise h3 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
 }
 
 .robin-hood-promise p {
-  font-size: 1.125rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.6;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -569,7 +676,7 @@ body {
 .join-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .join-card {
@@ -592,7 +699,7 @@ body {
 
 @media (max-width: 1024px) {
   .hero-title {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .section-title {
@@ -600,13 +707,44 @@ body {
   }
 
   .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-layout {
+    gap: 1.5rem;
+  }
+
+  .goal-card {
+    min-width: 100px;
+    padding: 1.25rem 0.875rem;
+  }
+
+  .goal-card-1 {
+    height: 160px;
+  }
+
+  .goal-card-2 {
+    height: 190px;
+  }
+
+  .goal-card-3 {
+    height: 220px;
   }
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    height: auto;
+    min-height: 100vh;
+    padding: 1rem 0;
+  }
+
+  .hero-container {
+    padding: 0 1rem;
+  }
+
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .section-title {
@@ -618,198 +756,144 @@ body {
   }
 
   .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 0.875rem;
   }
 
   .section {
-    padding: 3rem 0;
+    padding: 1.5rem 0;
   }
 
   .hero-layout {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0 1rem;
-    margin-top: 2rem;
+    gap: 1.5rem;
   }
 
-  .hero-section {
-    min-height: auto;
-    padding: 1rem 0;
+  .left-container,
+  .right-container {
+    padding-top: 1rem;
   }
 
-  .key-stats {
+  .mission-vision-row {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
-  .goals-grid {
+  .key-stats-row {
+    grid-template-columns: 1fr;
     gap: 1rem;
-    min-height: 300px;
+  }
+
+  .stat-number {
+    font-size: 1.75rem;
+  }
+
+  .stat-item p {
+    font-size: 0.7rem;
+  }
+
+  .goals-grid {
+    gap: 0.75rem;
   }
 
   .goal-card {
-    min-width: 100px;
-    padding: 1.5rem 1rem;
+    min-width: 90px;
+    padding: 1rem 0.75rem;
   }
 
   .goal-card-1,
   .goal-card-2,
   .goal-card-3 {
-    height: 200px !important;
+    height: 150px !important;
   }
 
   .goal-icon {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .goal-icon svg {
+    width: 20px;
+    height: 20px;
   }
 
   .goal-card h3 {
+    font-size: 0.8rem;
+  }
+
+  .solution-main-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .solution-qr-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .qr-code {
+    width: 140px;
+    height: 140px;
+  }
+
+  .solution-logo img {
+    height: 60px;
+  }
+
+  .solution-logo p {
+    font-size: 0.85rem;
+  }
+
+  .qr-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .solution-points-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .solution-point {
+    padding: 1.25rem;
+  }
+
+  .solution-point p {
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .solution-number {
+    font-size: 1.75rem;
+  }
+
+  .solution-point h3 {
     font-size: 1rem;
+  }
+
+  .solution-point p {
+    font-size: 0.85rem;
   }
 
   .container {
     padding: 0 1rem;
   }
 
+  .header {
+    top: 0.5rem;
+    padding: 0 0.75rem;
+  }
+
   .header-content {
-    padding: 1rem;
+    padding: 0.6rem 1rem;
   }
 
   .logo-text h1 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .logo-image {
-    height: 40px;
-  }
-
-  .goals-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    min-height: auto;
-  }
-
-  .goal-card {
-    min-width: 250px;
-    height: 200px !important;
-  }
-
-  .goal-card-1,
-  .goal-card-2,
-  .goal-card-3 {
-    height: 200px !important;
-  }
-
-  .solution-grid,
-  .revolution-grid,
-  .timing-grid,
-  .legacy-stats,
-  .join-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 1024px) {
-  .hero-title {
-    font-size: 3rem;
-  }
-
-  .hero-grid {
-    gap: 3rem;
-  }
-
-  .goals-cards {
-    gap: 1rem;
-  }
-
-  .goal-card {
-    min-width: 120px;
-    padding: 1.5rem 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-container {
-    padding: 0 1rem;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.125rem;
-  }
-
-  .hero-meta {
-    gap: 1rem;
-  }
-
-  .meta-item {
-    min-width: 120px;
-    padding: 0.75rem 1rem;
-  }
-
-  .hero-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .goals-cards {
-    gap: 0.75rem;
-    min-height: 250px;
-  }
-
-  .goal-card {
-    min-width: 100px;
-    padding: 1.5rem 0.75rem;
-  }
-
-  .goal-card-1 {
-    height: 180px;
-  }
-
-  .goal-card-2 {
-    height: 200px;
-  }
-
-  .goal-card-3 {
-    height: 220px;
-  }
-
-  .goal-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .goal-content h3 {
-    font-size: 1rem;
-  }
-
-  .goal-content p {
-    font-size: 0.75rem;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .mission-card {
-    padding: 1rem;
-  }
-
-  .mission-icon {
-    width: 35px;
     height: 35px;
   }
 
-  .section {
-    padding: 3rem 0;
-  }
-
-  .goals-grid,
   .solution-grid,
   .revolution-grid,
   .timing-grid,
