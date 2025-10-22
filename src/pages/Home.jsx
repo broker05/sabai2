@@ -14,8 +14,8 @@ const Home = () => {
       <SolutionSection />
       <RevolutionSection />
       <TimingSection />
-  <LivesSection />
-  <EconomicsSection />
+      <LivesSection />
+      <EconomicsSection />
       <LegacySection />
       <JoinSection />
     </div>
