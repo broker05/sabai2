@@ -2,78 +2,147 @@ import { useTheme } from '../../contexts/ThemeContext';
 import Section from '../Section';
 
 const GlobalSection = () => {
-   const { colors } = useTheme();
+  const { colors } = useTheme();
 
-   return (
-      <Section
-         title="GLOBAL"
-         subtitle="Thailand Proof → English/Spanish Global Launch 2026"
-         id="global"
-      >
-         {/* Center - Globe with surrounding labels */}
-         <div className="global-center">
-            <div className="global-label global-label-top-left">
-               <h4>Localization</h4>
-               <p>Translate Thai content to English/Spanish</p>
-            </div>
+  return (
+    <Section
+      id="global"
+      className="global-section-wrapper"
+    >
+      <div className="global-background-container">
+        {/* Center - Globe with surrounding labels */}
+        <div className="global-center">
+          <div className="global-label global-label-top-left">
+            <h4>Localization</h4>
+            <p>Translate Thai content to English/Spanish</p>
+          </div>
 
-            <div className="global-label global-label-top-right">
-               <h4>Testing</h4>
-               <p>Beta proof in Thailand market</p>
-            </div>
+          <div className="global-label global-label-top-right">
+            <h4>Testing</h4>
+            <p>Beta proof in Thailand market</p>
+          </div>
 
-            <img 
-               src="images/Thailand.png" 
-               alt="Global Expansion Map" 
-               className="global-map" 
-            />
+          <img
+            src="images/Thailand.png"
+            alt="Global Expansion Map"
+            className="global-map"
+          />
 
-            <div className="global-label global-label-bottom-left">
-               <h4>Global Prep</h4>
-               <p>Adapt for international compliance</p>
-            </div>
+          <div className="global-label global-label-bottom-left">
+            <h4>Global Prep</h4>
+            <p>Adapt for international compliance</p>
+          </div>
 
-            <div className="global-label global-label-bottom-right">
-               <h4>Launch 2026</h4>
-               <p>Staged global rollout</p>
-            </div>
-         </div>
+          <div className="global-label global-label-bottom-right">
+            <h4>Launch 2026</h4>
+            <p>Staged global rollout</p>
+          </div>
+        </div>
 
-         {/* Bottom Columns - Market Strategy and Expansion Timeline */}
-         <div className="global-content">
-            <div className="global-column global-left">
-               <h3 className="global-column-title">Market Strategy:</h3>
-               <ul className="global-list">
-                  <li>Thailand First: 76M health-conscious, mobile-first population</li>
-                  <li>Proven Demand: 40% of AI users seek health advice globally</li>
-                  <li>Market Size: $2-10T digital health by 2034, $12B messaging-native segment</li>
-               </ul>
-            </div>
+        {/* Bottom Columns - Market Strategy and Expansion Timeline */}
+        <div className="global-content">
+          <div className="global-column global-left">
+            <h3 className="global-column-title">Market Strategy:</h3>
+            <ul className="global-list">
+              <li>Thailand First: 76M health-conscious, mobile-first population</li>
+              <li>Proven Demand: 40% of AI users seek health advice globally</li>
+              <li>Market Size: $2-10T digital health by 2034, $12B messaging-native segment</li>
+            </ul>
+          </div>
 
-            <div className="global-column global-right">
-               <h3 className="global-column-title">Expansion Timeline:</h3>
-               <ul className="global-list">
-                  <li>2025: Thailand pilot, product and concept proof</li>
-                  <li>H1 2026: Proof of concept with 5-6 figure active users</li>
-                  <li>H2 2026: English & Spanish global product launch</li>
-                  <li>2027+: Multi-country operations with local partners</li>
-               </ul>
-            </div>
-         </div>
+          <div className="global-column global-right">
+            <h3 className="global-column-title">Expansion Timeline:</h3>
+            <ul className="global-list">
+              <li>2025: Thailand pilot, product and concept proof</li>
+              <li>H1 2026: Proof of concept with 5-6 figure active users</li>
+              <li>H2 2026: English & Spanish global product launch</li>
+              <li>2027+: Multi-country operations with local partners</li>
+            </ul>
+          </div>
+        </div>
 
-         {/* Competitive Advantage */}
-         <div className="global-advantage">
-            <strong>Competitive Advantage:</strong> Universal multi-platform access vs single-platform competitors
-         </div>
+        {/* Competitive Advantage */}
+        <div className="global-advantage">
+          <strong>Competitive Advantage:</strong> Universal multi-platform access vs single-platform competitors
+        </div>
+      </div>
 
-         <style jsx>{`
+      <style jsx>{`
+        #global {
+          position: relative;
+          overflow: hidden;
+          background-image: url('/images/world-map.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          padding-top: 3rem !important;
+          padding-bottom: 3rem !important;
+          min-height: 100vh;
+        }
+
+        #global::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(255, 255, 255, 0.75);
+          backdrop-filter: blur(8px);
+          z-index: 0;
+        }
+
+        .dark #global::before {
+          background: rgba(15, 23, 42, 0.80);
+          backdrop-filter: blur(8px);
+        }
+
+        #global .container {
+          position: relative;
+          z-index: 1;
+        }
+
+        #global .section-header {
+          position: relative;
+          z-index: 1;
+          background: transparent !important;
+          backdrop-filter: none !important;
+          border-radius: 0;
+          padding: 2rem;
+          margin-bottom: 2rem;
+          border: none !important;
+          box-shadow: none !important;
+        }
+
+        .dark #global .section-header {
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+        }
+
+        .global-background-container {
+          position: relative;
+          padding: 0;
+          z-index: 1;
+        }
+
+        .global-center,
+        .global-content,
+        .global-advantage {
+          position: relative;
+          z-index: 1;
+        }
+
         .global-center {
           position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
-          min-height: 500px;
-          margin: 2rem 0;
+          min-height: 700px;
+          margin: 0 auto;
+          max-width: 1400px;
+          padding-top: 2rem;
         }
 
         .global-content {
@@ -88,22 +157,29 @@ const GlobalSection = () => {
         }
 
         .global-column {
-          background: linear-gradient(135deg, rgba(139, 195, 74, 0.08) 0%, rgba(139, 195, 74, 0.03) 100%);
-          border: 2px solid rgba(139, 195, 74, 0.2);
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+          backdrop-filter: blur(25px);
+          border: 2px solid rgba(139, 195, 74, 0.25);
           border-radius: 16px;
           padding: 1.5rem;
+          box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
         }
 
         .dark .global-column {
-          background: linear-gradient(135deg, rgba(139, 195, 74, 0.15) 0%, rgba(139, 195, 74, 0.08) 100%);
+          background: linear-gradient(135deg, rgba(30, 41, 59, 0.25) 0%, rgba(30, 41, 59, 0.15) 100%);
           border-color: rgba(139, 195, 74, 0.3);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
 
         .global-column-title {
           font-size: 1.1rem;
           font-weight: 700;
-          color: ${colors.text};
+          color: #0F172A;
           margin: 0 0 1rem 0;
+        }
+
+        .dark .global-column-title {
+          color: #F0F9FF;
         }
 
         .global-list {
@@ -112,7 +188,12 @@ const GlobalSection = () => {
           margin: 0;
           font-size: 0.95rem;
           line-height: 1.7;
-          color: ${colors.textSecondary};
+          color: #1E293B;
+          font-weight: 500;
+        }
+
+        .dark .global-list {
+          color: #E0F2FE;
         }
 
         .global-list li {
@@ -125,13 +206,17 @@ const GlobalSection = () => {
           content: '•';
           position: absolute;
           left: 0;
-          color: ${colors.primary};
+          color: #8BC34A;
           font-weight: 700;
+        }
+
+        .dark .global-list li::before {
+          color: #4FC3F7;
         }
 
         .global-map {
           width: 100%;
-          max-width: 400px;
+          max-width: 600px;
           height: auto;
           border-radius: 50%;
           box-shadow: 0 8px 32px rgba(139, 195, 74, 0.2);
@@ -139,63 +224,86 @@ const GlobalSection = () => {
 
         .global-label {
           position: absolute;
-          background: transparent;
-          padding: 0.75rem 1rem;
-          border-radius: 8px;
-          max-width: 180px;
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.25) 100%);
+          backdrop-filter: blur(25px);
+          padding: 1rem 1.5rem;
+          border-radius: 12px;
+          max-width: 220px;
+          border: 2px solid rgba(139, 195, 74, 0.4);
           border-left: 4px solid #4FC3F7;
+          box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
         }
 
-
-
         .dark .global-label {
-          background: transparent;
-          border-left-color: #4FC3F7;
+          background: linear-gradient(135deg, rgba(30, 41, 59, 0.45) 0%, rgba(30, 41, 59, 0.35) 100%);
+          border: 2px solid rgba(139, 195, 74, 0.4);
+          border-left: 4px solid #4FC3F7;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
         }
 
         .global-label h4 {
-          margin: 0 0 0.25rem 0;
-          font-size: 1.1rem;
+          margin: 0 0 0.5rem 0;
+          font-size: 1.3rem;
           font-weight: 700;
-          color: ${colors.text};
+          color: #0F172A;
+        }
+
+        .dark .global-label h4 {
+          color: #F0F9FF;
         }
 
         .global-label p {
           margin: 0;
-          font-size: 0.85rem;
-          line-height: 1.4;
-          color: ${colors.textSecondary};
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #1E293B;
+          font-weight: 500;
+        }
+
+        .dark .global-label p {
+          color: #E0F2FE;
         }
 
         .global-label-top-left {
-          top: 15%;
-          left: 15%;
+          top: 10%;
+          left: 5%;
         }
 
         .global-label-top-right {
-          top: 15%;
-          right: 15%;
+          top: 10%;
+          right: 5%;
         }
 
         .global-label-bottom-left {
-          bottom: 15%;
-          left: 15%;
+          bottom: 10%;
+          left: 5%;
         }
 
         .global-label-bottom-right {
-          bottom: 15%;
-          right: 15%;
+          bottom: 10%;
+          right: 5%;
         }
 
         .global-advantage {
           text-align: center;
           font-size: 1rem;
-          color: ${colors.textSecondary};
+          color: #1E293B;
+          font-weight: 600;
           margin-top: 2rem;
           padding: 1rem;
-          background: linear-gradient(135deg, rgba(139, 195, 74, 0.05) 0%, rgba(139, 195, 74, 0.02) 100%);
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+          backdrop-filter: blur(25px);
+          -webkit-backdrop-filter: blur(25px);
           border-radius: 12px;
-          border: 1px solid rgba(139, 195, 74, 0.2);
+          border: 2px solid rgba(139, 195, 74, 0.25);
+          box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        }
+
+        .dark .global-advantage {
+          background: linear-gradient(135deg, rgba(30, 41, 59, 0.25) 0%, rgba(30, 41, 59, 0.15) 100%);
+          border-color: rgba(139, 195, 74, 0.3);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+          color: #E0F2FE;
         }
 
         .global-advantage strong {
@@ -343,8 +451,8 @@ const GlobalSection = () => {
           }
         }
       `}</style>
-      </Section>
-   );
+    </Section>
+  );
 };
 
 export default GlobalSection;

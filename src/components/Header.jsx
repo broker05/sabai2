@@ -1,30 +1,33 @@
 import { useTheme } from '../contexts/ThemeContext';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const { colors } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
-    { label: 'Solution', href: '#solution' },
-    { label: 'Global', href: '#global' },
-    { label: 'Team', href: '#builders' },
-    { label: 'Projections', href: '#projections' },
-    { label: 'Join', href: '#join' }
+    { label: 'Global', path: '/global' },
+    { label: 'Team', path: '/team' },
+    { label: 'Projections', path: '/projections' }
   ];
 
-  const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setMobileMenuOpen(false);
-    }
+  const handleNavigation = (path) => {
+    navigate(path);
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <header className="header">
       <div className="header-content">
-        <div className="logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
+        <div onClick={handleLogoClick} className="logo" style={{ cursor: 'pointer' }}>
           <img src="/images/SabaiLogo.png" alt="SabaiHealth Logo" className="logo-image" />
           <div className="logo-text">
             <h1 style={{ color: colors.text }}>SabaiHealth</h1>
@@ -34,18 +37,14 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="nav-desktop">
           {navItems.map((item) => (
-            <a
-              key={item.href}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(item.href);
-              }}
-              href={item.href}
+            <button
+              key={item.path}
+              onClick={() => handleNavigation(item.path)}
               className="nav-link"
               style={{ color: colors.text }}
             >
               {item.label}
-            </a>
+            </button>
           ))}
         </nav>
 
@@ -76,18 +75,14 @@ const Header = () => {
       {mobileMenuOpen && (
         <nav className="nav-mobile">
           {navItems.map((item) => (
-            <a
-              key={item.href}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(item.href);
-              }}
-              href={item.href}
+            <button
+              key={item.path}
+              onClick={() => handleNavigation(item.path)}
               className="nav-link-mobile"
               style={{ color: colors.text }}
             >
               {item.label}
-            </a>
+            </button>
           ))}
         </nav>
       )}
@@ -106,6 +101,9 @@ const Header = () => {
           transition: all 0.3s ease;
           cursor: pointer;
           position: relative;
+          background: none;
+          border: none;
+          padding: 0;
         }
 
         .nav-link:hover {
@@ -172,6 +170,10 @@ const Header = () => {
             border-radius: 8px;
             transition: all 0.3s ease;
             cursor: pointer;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
           }
 
           .nav-link-mobile:hover {

@@ -19,6 +19,33 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   transition: background-color var(--transition-speed) ease;
+  background: transparent;
+  position: relative;
+}
+
+/* Apply world map background to body when on global page */
+body:has(.global-page) {
+  background: url('/images/world-map.jpg') center/cover fixed !important;
+}
+
+body:has(.global-page)::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+body:has(.global-page) .app,
+body:has(.global-page) main {
+  position: relative;
+  z-index: 1;
 }
 
 .app {
@@ -29,6 +56,11 @@ body {
 
 .dark .app {
   background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #134E4A 100%);
+}
+
+/* Remove app background for global page to show world map */
+.app:has(.global-page) {
+  background: transparent !important;
 }
 
 main {
@@ -64,17 +96,17 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(135deg, rgba(139, 195, 74, 0.15) 0%, rgba(79, 195, 247, 0.15) 100%);
   backdrop-filter: blur(20px);
   border-radius: 50px;
-  border: 1px solid rgba(14, 165, 233, 0.15);
-  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.1);
+  border: 2px solid rgba(79, 195, 247, 0.3);
+  box-shadow: 0 4px 20px rgba(79, 195, 247, 0.2);
 }
 
 .dark .header-content {
-  background: rgba(30, 41, 59, 0.7);
-  border-color: rgba(125, 211, 252, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, rgba(139, 195, 74, 0.2) 0%, rgba(79, 195, 247, 0.2) 100%);
+  border-color: rgba(79, 195, 247, 0.4);
+  box-shadow: 0 4px 20px rgba(79, 195, 247, 0.3);
 }
 
 .logo {
@@ -160,11 +192,29 @@ main {
 }
 
 .section {
-  padding: 3rem 0 2rem;
+  padding: 2.5rem 0 2rem;
+  scroll-margin-top: 50px;
 }
 
 .section:first-of-type {
   padding-top: 1rem;
+}
+
+/* Add specific padding for sections that need more space from navbar */
+#solution,
+#timing,
+#revolution,
+#lives,
+#economics,
+#global,
+#proof,
+#builders,
+#wisdom,
+#projections,
+#appendix,
+#legacy,
+#join {
+  padding-top: 3rem;
 }
 
 .section-header {
@@ -672,10 +722,21 @@ main {
   border: 2px solid;
 }
 
-.crisis-stat-card:nth-child(1) { animation-delay: 0.1s; }
-.crisis-stat-card:nth-child(2) { animation-delay: 0.2s; }
-.crisis-stat-card:nth-child(3) { animation-delay: 0.3s; }
-.crisis-stat-card:nth-child(4) { animation-delay: 0.4s; }
+.crisis-stat-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.crisis-stat-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.crisis-stat-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.crisis-stat-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
 .crisis-danger {
   background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(220, 38, 38, 0.08) 100%);
@@ -1173,10 +1234,21 @@ main {
   background: linear-gradient(180deg, #14B8A6 0%, #0D9488 100%);
 }
 
-.timing-card:nth-child(1) { animation-delay: 0.1s; }
-.timing-card:nth-child(2) { animation-delay: 0.2s; }
-.timing-card:nth-child(3) { animation-delay: 0.3s; }
-.timing-card:nth-child(4) { animation-delay: 0.4s; }
+.timing-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.timing-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.timing-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.timing-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
 .timing-card:hover {
   transform: translateY(-3px);
@@ -2904,13 +2976,181 @@ main {
    ============================================ */
 
 @media (max-width: 768px) {
+
   .hero-section::before,
   .hero-section::after {
     display: none !important;
   }
 }
 
+/* ============================================
+   PAGE SPACING FOR NAVIGATION
+   ============================================ */
 
-
+.global-page .section:first-child,
+.team-page .section:first-child,
+.projections-page .section:first-child {
+  padding-top: 3rem !important;
 }
 
+@media (max-width: 768px) {
+
+  .global-page .section:first-child,
+  .team-page .section:first-child,
+  .projections-page .section:first-child {
+    padding-top: 2.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .global-page .section:first-child,
+  .team-page .section:first-child,
+  .projections-page .section:first-child {
+    padding-top: 0rem !important;
+  }
+}
+
+/* ============================================
+   GLOBAL SECTION BACKGROUND & GLASS STYLING
+   ============================================ */
+
+#global {
+  position: relative !important;
+  overflow: hidden !important;
+  background-image: url('/images/world-map.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+  min-height: 100vh !important;
+}
+
+#global::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(255, 255, 255, 0.60) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  z-index: 0 !important;
+}
+
+.dark #global::before {
+  background: rgba(15, 23, 42, 0.65) !important;
+}
+
+#global .container {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+#global .section-header {
+  position: relative !important;
+  z-index: 1 !important;
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: 0 !important;
+  padding: 2rem !important;
+  margin-bottom: 2rem !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.dark #global .section-header {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#global .global-advantage {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.25) 100%) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 2px solid rgba(139, 195, 74, 0.25) !important;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15) !important;
+}
+
+.dark #global .global-advantage {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.35) 0%, rgba(30, 41, 59, 0.25) 100%) !important;
+  border-color: rgba(139, 195, 74, 0.3) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ============================================
+   PROOF SECTION - SAME BACKGROUND AS GLOBAL
+   ============================================ */
+
+#proof {
+  position: relative !important;
+  overflow: hidden !important;
+  background-image: url('/images/world-map.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+#proof::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(255, 255, 255, 0.60) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+  z-index: 0 !important;
+}
+
+.dark #proof::before {
+  background: rgba(15, 23, 42, 0.65) !important;
+}
+
+#proof .container {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+#proof .section-header {
+  position: relative !important;
+  z-index: 1 !important;
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: 0 !important;
+  padding: 2rem !important;
+  margin-bottom: 2rem !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.dark #proof .section-header {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Glass effect for proof phase cards */
+#proof .phase-content {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 2px solid rgba(139, 195, 74, 0.25) !important;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15) !important;
+}
+
+.dark #proof .phase-content {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.25) 0%, rgba(30, 41, 59, 0.15) 100%) !important;
+  border-color: rgba(139, 195, 74, 0.3) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}

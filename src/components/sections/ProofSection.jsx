@@ -3,84 +3,84 @@ import Section from '../Section';
 import { Target, TrendingUp, Globe2, Rocket } from 'lucide-react';
 
 const ProofSection = () => {
-   const { colors } = useTheme();
+  const { colors } = useTheme();
 
-   return (
-      <Section
-         title="PROOF"
-         subtitle="Bangkok Pilot → Thailand Scale → Global Launch"
-         id="proof"
-      >
-         <div className="proof-timeline">
-            {/* Timeline Line */}
-            <div className="timeline-line"></div>
+  return (
+    <Section
+      title="PROOF"
+      subtitle="Bangkok Pilot → Thailand Scale → Global Launch"
+      id="proof"
+    >
+      <div className="proof-timeline">
+        {/* Timeline Line */}
+        <div className="timeline-line"></div>
 
-            {/* Phase 1 */}
-            <div className="proof-phase proof-phase-1">
-               <div className="phase-hanger"></div>
-               <div className="phase-number">
-                  <Target size={28} color="white" />
-               </div>
-               <div className="phase-content">
-                  <h3 className="phase-title">End 2025: Foundation</h3>
-                  <ul className="phase-list">
-                     <li>5-6 figure active Bangkok users</li>
-                     <li>Government, hospital, university endorsements</li>
-                     <li>Validated product-market fit</li>
-                  </ul>
-               </div>
-            </div>
+        {/* Phase 1 */}
+        <div className="proof-phase proof-phase-1">
+          <div className="phase-hanger"></div>
+          <div className="phase-number">
+            <Target size={28} color="white" />
+          </div>
+          <div className="phase-content">
+            <h3 className="phase-title">End 2025: Foundation</h3>
+            <ul className="phase-list">
+              <li>5-6 figure active Bangkok users</li>
+              <li>Government, hospital, university endorsements</li>
+              <li>Validated product-market fit</li>
+            </ul>
+          </div>
+        </div>
 
-            {/* Phase 2 */}
-            <div className="proof-phase proof-phase-2">
-               <div className="phase-hanger"></div>
-               <div className="phase-number">
-                  <TrendingUp size={28} color="white" />
-               </div>
-               <div className="phase-content">
-                  <h3 className="phase-title">H1 2026: Validation</h3>
-                  <ul className="phase-list">
-                     <li>Proven retention, engagement, and health outcomes</li>
-                     <li>Thailand regulatory pathway established</li>
-                     <li>Revenue model optimization</li>
-                  </ul>
-               </div>
-            </div>
+        {/* Phase 2 */}
+        <div className="proof-phase proof-phase-2">
+          <div className="phase-hanger"></div>
+          <div className="phase-number">
+            <TrendingUp size={28} color="white" />
+          </div>
+          <div className="phase-content">
+            <h3 className="phase-title">H1 2026: Validation</h3>
+            <ul className="phase-list">
+              <li>Proven retention, engagement, and health outcomes</li>
+              <li>Thailand regulatory pathway established</li>
+              <li>Revenue model optimization</li>
+            </ul>
+          </div>
+        </div>
 
-            {/* Phase 3 */}
-            <div className="proof-phase proof-phase-3">
-               <div className="phase-hanger"></div>
-               <div className="phase-number">
-                  <Globe2 size={28} color="white" />
-               </div>
-               <div className="phase-content">
-                  <h3 className="phase-title">H2 2026: Global Preparation</h3>
-                  <ul className="phase-list">
-                     <li>English/Spanish product localization</li>
-                     <li>International channel partner agreements</li>
-                     <li>Series A or token funding completion</li>
-                  </ul>
-               </div>
-            </div>
+        {/* Phase 3 */}
+        <div className="proof-phase proof-phase-3">
+          <div className="phase-hanger"></div>
+          <div className="phase-number">
+            <Globe2 size={28} color="white" />
+          </div>
+          <div className="phase-content">
+            <h3 className="phase-title">H2 2026: Global Preparation</h3>
+            <ul className="phase-list">
+              <li>English/Spanish product localization</li>
+              <li>International channel partner agreements</li>
+              <li>Series A or token funding completion</li>
+            </ul>
+          </div>
+        </div>
 
-            {/* Phase 4 */}
-            <div className="proof-phase proof-phase-4">
-               <div className="phase-hanger"></div>
-               <div className="phase-number">
-                  <Rocket size={28} color="white" />
-               </div>
-               <div className="phase-content">
-                  <h3 className="phase-title">2027: Global Scale</h3>
-                  <ul className="phase-list">
-                     <li>Multi-country operations launch</li>
-                     <li>Target: 1M+ users across multiple markets</li>
-                     <li>Platform optimization for global expansion</li>
-                  </ul>
-               </div>
-            </div>
-         </div>
+        {/* Phase 4 */}
+        <div className="proof-phase proof-phase-4">
+          <div className="phase-hanger"></div>
+          <div className="phase-number">
+            <Rocket size={28} color="white" />
+          </div>
+          <div className="phase-content">
+            <h3 className="phase-title">2027: Global Scale</h3>
+            <ul className="phase-list">
+              <li>Multi-country operations launch</li>
+              <li>Target: 1M+ users across multiple markets</li>
+              <li>Platform optimization for global expansion</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-         <style jsx>{`
+      <style jsx>{`
         .proof-timeline {
           position: relative;
           max-width: 1400px;
@@ -174,8 +174,12 @@ const ProofSection = () => {
         .phase-title {
           font-size: 1.05rem;
           font-weight: 700;
-          color: ${colors.text};
+          color: #0F172A;
           margin: 0 0 1rem 0;
+        }
+
+        .dark .phase-title {
+          color: #F0F9FF;
         }
 
         .phase-list {
@@ -184,7 +188,12 @@ const ProofSection = () => {
           margin: 0;
           font-size: 0.9rem;
           line-height: 1.7;
-          color: ${colors.textSecondary};
+          color: #1E293B;
+          font-weight: 500;
+        }
+
+        .dark .phase-list {
+          color: #E0F2FE;
         }
 
         .phase-list li {
@@ -252,8 +261,8 @@ const ProofSection = () => {
           }
         }
       `}</style>
-      </Section>
-   );
+    </Section>
+  );
 };
 
 export default ProofSection;
