@@ -12,8 +12,8 @@ const Home = () => {
     <div className="home">
       <HeroSection />
       <SolutionSection />
-      <RevolutionSection />
       <TimingSection />
+      <RevolutionSection />
       <LivesSection />
       <EconomicsSection />
       <LegacySection />
