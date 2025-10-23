@@ -49,7 +49,7 @@ const Header = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="mobile-menu-button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
