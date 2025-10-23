@@ -4,6 +4,7 @@ import './styles/theme.css'
 import './styles/globals.css'
 import './styles/typography.css'
 import './styles/animations.css'
+import './styles/responsive.css'
 import './index.css'
 import App from './App.jsx'
 
