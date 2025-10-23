@@ -1,6 +1,6 @@
 import { useTheme } from '../contexts/ThemeContext';
 
-const GlassCard = ({ children, className = '', hover = true }) => {
+const GlassCard = ({ children, className = '', hover = true, style = {} }) => {
   const { colors } = useTheme();
 
   return (
@@ -8,6 +8,7 @@ const GlassCard = ({ children, className = '', hover = true }) => {
       className={`glass-card ${hover ? 'glass-card-hover' : ''} ${className}`}
       style={{
         borderColor: colors.border,
+        ...style,
       }}
     >
       {children}
