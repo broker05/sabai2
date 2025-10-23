@@ -35,7 +35,7 @@ export const ThemeProvider = ({ children }) => {
     } catch (error) {
       console.warn('Failed to save theme to localStorage:', error);
     }
-    
+
     // Toggle dark class on document root
     // CSS custom properties are defined in styles/theme.css
     document.documentElement.classList.toggle('dark', isDark);
