@@ -19,15 +19,12 @@ export const ThemeProvider = ({ children }) => {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) {
         setIsDark(savedTheme === 'dark');
-      } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        setIsDark(prefersDark);
       }
+      // If no saved preference, default to light mode (don't check system preference)
     } catch (error) {
       console.warn('Failed to load theme from localStorage:', error);
-      // Fall back to system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setIsDark(prefersDark);
+      // Fall back to light mode (default)
+      setIsDark(false);
     }
   }, []);
 
