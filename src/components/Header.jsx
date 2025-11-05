@@ -9,8 +9,7 @@ const Header = () => {
 
   const navItems = [
     { label: 'Global', path: '/global' },
-    { label: 'Team', path: '/team' },
-    { label: 'Projections', path: '/projections' }
+    { label: 'Team', path: '/team' }
   ];
 
   const handleNavigation = (path) => {
